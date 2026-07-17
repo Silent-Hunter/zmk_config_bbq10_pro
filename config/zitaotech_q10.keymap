@@ -79,6 +79,14 @@
         };
     };
     behaviors {
+        td3: tap_shift_doubletap_caps {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&sk LSHFT>, <&kp CLCK>;
+        };
+    };
+    behaviors {
     sk_kp: behavior_sk_kp {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
@@ -115,8 +123,8 @@
     &kp CLCK                &kp LGUI                            &mkp LCLK                          &mt ESC K_BACK                    &kp TAB
     &kp Q              &kp W      &kp E       &kp R     &kp T         &kp Y             &kp U            &kp I            &kp O            &kp P
     &kp A              &kp S      &kp D       &kp F     &kp G         &kp H             &kp J            &kp K            &kp L            &kp BSPC
-    &sk LSHFT          &kp Z      &kp X       &kp C     &kp V         &kp B             &kp N            &kp M            &mt DLLR SEMI    &kp ENTER
-    &sk_kp LCTRL  LCTRL     &kp LALT                                  &kp SPACE                          &to SYM                           &to UPPER 
+    &td3               &kp Z      &kp X       &kp C     &kp V         &kp B             &kp N            &kp M            &mt DLLR SEMI    &kp ENTER
+    &sk_kp LCTRL LCTRL &sk_kp LALT LALT                         &kp SPACE                          &to SYM                           &to UPPER 
             >;
         };
 
@@ -124,11 +132,11 @@
 
             bindings = <        
                  &kp C_VOL_UP                                                                                       &kp C_VOL_DN
-    &kp PSCRN               &kp C_AC_SEARCH                     &mkp LCLK                          &kp F5                            &kp F12 
-    &kp HASH     &kp N1     &kp N2      &kp N3    &mt LBKT LPAR &mt RBKT RPAR     &kp UNDER        &kp MINUS        &kp PLUS         &kp AT
-    &kp STAR     &kp N4     &kp N5      &kp N6    &kp SLASH     &kp COLON         &kp SEMI         &kp APOS         &kp DQT          &kp DEL
-    &kp LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK     &kp EXCL          &kp COMMA        &kp DOT          &tdc_to_MEDIA    &kp ENTER
-    &kp LCTRL               &kp N0                              &kp SPACE                          &to DEFAULT                       &to UPPER
+    &kp PSCRN                  &kp C_AC_SEARCH                     &mkp LCLK                          &kp F5                            &kp F12 
+    &kp HASH        &kp N1     &kp N2      &kp N3    &mt LBKT LPAR &mt RBKT RPAR     &kp UNDER        &kp MINUS        &kp PLUS         &kp AT
+    &kp STAR        &kp N4     &kp N5      &kp N6    &kp SLASH     &kp COLON         &kp SEMI         &kp APOS         &kp DQT          &kp DEL
+    &td3            &kp N7     &kp N8      &kp N9    &kp QMARK     &kp EXCL          &kp COMMA        &kp DOT          &tdc_to_MEDIA    &kp ENTER
+    &sk_kp LCTRL LCTRL         &kp N0                              &kp SPACE                          &to DEFAULT                       &to UPPER
             >;
         };
 
@@ -139,8 +147,8 @@
     &bt BT_SEL 0            &bt BT_SEL 1                             &td0                           &bt BT_SEL 2                     &bt BT_SEL 3
     &none        &kp UP     &none       &sys_reset      &ext_power EP_TOG   &none            &kp LT           &kp GT           &kp PIPE         &kp KP_EQUAL
     &kp LEFT     &kp DOWN   &kp RIGHT   &none           &kp BSLH            &kp AMPS         &kp LBRC         &kp RBRC         &kp CARET        &kp BSPC
-    &kp LSHFT    &none      &none       &rgb_ug RGB_BRD &bl BL_DEC          &rgb_ug RGB_TOG  &bl BL_INC       &rgb_ug RGB_BRI  &td_boot_out     &kp ENTER
-    &kp LCTRL               &kp LALT                                        &kp  SPACE                        &to SYM                           &to DEFAULT
+    &td3         &none      &none       &rgb_ug RGB_BRD &bl BL_DEC          &rgb_ug RGB_TOG  &bl BL_INC       &rgb_ug RGB_BRI  &td_boot_out     &kp ENTER
+    &sk_kp LCTRL LCTRL      &sk_kp LALT LALT                         &kp  SPACE                        &to SYM                           &to DEFAULT
             >;
         };
 
